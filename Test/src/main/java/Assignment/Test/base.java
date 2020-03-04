@@ -16,13 +16,13 @@ public class base {
 	
 	public WebDriver initializeBrowser() throws IOException {
 		
-		FileInputStream fis = new FileInputStream("C:\\Vir@l's Data\\Study\\ChromeDriver\\data.properties");
+		FileInputStream fis = new FileInputStream("C:\\Vir@l's Data\\Interviews\\Test\\src\\main\\java\\Assignment\\Test\\data.properties");
 		prop = new Properties();
 		prop.load(fis);
 		
 		String browser = prop.getProperty("browser");
 		if(browser.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "D:\\Automation\\chromedriver\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "C:\\\\Vir@l's Data\\\\Study\\\\ChromeDriver\\chromedriver.exe");
 			driver = new ChromeDriver();
 		}
 		

@@ -16,7 +16,7 @@ public class base {
 	
 	public WebDriver initializeBrowser() throws IOException {
 		
-		FileInputStream fis = new FileInputStream("D:\\Viral\\Automation\\Core_RestAssuredAutomation\\Test\\src\\main\\java\\Assignment\\Test\\data.properties");
+		FileInputStream fis = new FileInputStream("C:\\Vir@l's Data\\Study\\ChromeDriver\\data.properties");
 		prop = new Properties();
 		prop.load(fis);
 		

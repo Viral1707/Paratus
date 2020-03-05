@@ -29,6 +29,8 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
+<!-- https://mvnrepository.com/artifact/org.sikuli/sikuli-script -->
+
 
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>

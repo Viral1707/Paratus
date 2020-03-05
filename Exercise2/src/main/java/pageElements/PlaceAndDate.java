@@ -17,7 +17,9 @@ public class PlaceAndDate {
 	By endDate = By.xpath("//input[@placeholder=\"End Date\"]");
 	By currentDate = By.cssSelector(".ui-state-default.ui-state-active");
 	By startPlanningBtn = By.cssSelector(".button.p-color.full-width.start-planning");
-	
+	By placeToSelect = By.xpath("//span[text()='Houston, Texas, United States']");
+	By startDateSel = By.xpath("//td[@data-month=\"2\"]//a[text()='8']");
+	By endDateSel = By.xpath("//td[@data-month=\"2\"]//a[text()='14']");
 	
 	
 
@@ -39,6 +41,18 @@ public class PlaceAndDate {
 	
 	public WebElement getStartPlanningBtn() {
 		return driver.findElement(startPlanningBtn);
+	}
+	
+	public WebElement getPlaceToSelect() {
+		return driver.findElement(placeToSelect);
+	}
+	
+	public WebElement getStartDateSel() {
+		return driver.findElement(startDateSel);
+	}
+	
+	public WebElement getEndDateSel() {
+		return driver.findElement(endDateSel);
 	}
 
 }

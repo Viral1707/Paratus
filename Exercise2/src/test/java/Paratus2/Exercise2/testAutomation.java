@@ -34,20 +34,30 @@ public class testAutomation extends base{
 	
 		Thread.sleep(3000);
 		
+		//Comment start
+		
 		PlaceAndDate pad = new PlaceAndDate(driver);												// Object for the page on which place and dates are required to enter
-		/*
+		
 		pad.getPlaceToTravel().sendKeys(prop.getProperty("destination"));							// Enter the place
-		pad.getPlaceToTravel().sendKeys(Keys.ARROW_DOWN);
-		Thread.sleep(3000);
-		pad.getPlaceToTravel().sendKeys(Keys.ENTER);
-		Thread.sleep(3000);
+		pad.getPlaceToSelect().click();
+		
 		
 		pad.getStartDate().click();																	//Enter the Start Date
-		pad.getCurrentDate().click();
+		Thread.sleep(3000);
+		
+		
+		pad.getStartDateSel().click();
 		
 		pad.getEndDate().click();																	//Enter the End Date
-		pad.getCurrentDate().click();
-		*/
+		
+		pad.getEndDateSel().click();
+		
+		
+		
+		//Comment stop
+		
+		
+		
 		
 		Thread.sleep(20000);
 		pad.getStartPlanningBtn().click();															// Click on Start Planning Button

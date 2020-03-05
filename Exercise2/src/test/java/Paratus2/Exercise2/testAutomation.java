@@ -2,7 +2,11 @@ package Paratus2.Exercise2;
 
 import java.io.IOException;
 
-
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import pageElements.Accomodation;
@@ -21,69 +25,80 @@ public class testAutomation extends base{
 	@Test
 	public void testOne() throws IOException, InterruptedException {
 		
-		initializeBrowser();
+		initializeBrowser();																		// Initialization of Browser
 		driver.get(prop.getProperty("url"));
 		driver.manage().window().maximize();
 		Thread.sleep(3000);
-		LandingPage lp = new LandingPage(driver);
-		lp.getDepartmentLink().click();
+		LandingPage lp = new LandingPage(driver);													// Landing page object creation
+		lp.getPlanYourNextVacLink().click();
 	
 		Thread.sleep(3000);
 		
-		PlaceAndDate pad = new PlaceAndDate(driver);
+		PlaceAndDate pad = new PlaceAndDate(driver);												// Object for the page on which place and dates are required to enter
 		/*
-		pad.getPlaceToTravel().sendKeys("Houston");
+		pad.getPlaceToTravel().sendKeys(prop.getProperty("destination"));							// Enter the place
 		pad.getPlaceToTravel().sendKeys(Keys.ARROW_DOWN);
 		Thread.sleep(3000);
 		pad.getPlaceToTravel().sendKeys(Keys.ENTER);
 		Thread.sleep(3000);
 		
-		pad.getStartDate().click();
-		Thread.sleep(5000);
-		
-		
+		pad.getStartDate().click();																	//Enter the Start Date
 		pad.getCurrentDate().click();
 		
-		pad.getStartDate().click();
-		Thread.sleep(5000);
-		
-		
-		pad.getEndDate().click();
+		pad.getEndDate().click();																	//Enter the End Date
 		pad.getCurrentDate().click();
 		*/
 		
 		Thread.sleep(20000);
+		pad.getStartPlanningBtn().click();															// Click on Start Planning Button
 		
-		pad.getStartPlanningBtn().click();
 		
-		
-		DurationForCity dfy = new DurationForCity(driver);
+		DurationForCity dfy = new DurationForCity(driver);											// Trip Duration Customization Page
 		dfy.getNextSideBtn().click();
+		
+		HowWeCanHelp hwch = new HowWeCanHelp(driver);												// How Can We Help You Page
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		//wait.until(ExpectedConditions.elementToBeClickable(hwch.getOptionThird()));
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class=\"profile select-profile-3 \"]")));
 		Thread.sleep(3000);
-		HowWeCanHelp hwch = new HowWeCanHelp(driver);
 		hwch.getOptionThird().click();
+
+		TravelToPage ttp = new TravelToPage(driver);												// Travel to trip details page
+		//wait.until(ExpectedConditions.elementToBeClickable(ttp.getNextBtn()));
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class=\"button s-size p-color as-next js-next-alreadybooked\"]")));
 		Thread.sleep(3000);
-		TravelToPage ttp = new TravelToPage(driver);
 		ttp.getNextBtn().click();
+		
+		TravelBackPage tbp = new TravelBackPage(driver);											// Travel back trip details page
+		//wait.until(ExpectedConditions.elementToBeClickable(tbp.getNextBtn()));
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class=\"button s-size p-color as-next js-next-alreadybooked\"]")));
 		Thread.sleep(3000);
-		TravelBackPage tbp = new TravelBackPage(driver);
 		tbp.getNextBtn().click();
+		
+		Accomodation acco = new Accomodation(driver);												// Accomodation details page
+		//wait.until(ExpectedConditions.elementToBeClickable(acco.getNextBtn()));
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class=\"button s-size p-color as-next js-next-alreadybooked\"]")));
 		Thread.sleep(3000);
-		Accomodation acco = new Accomodation(driver);
 		acco.getNextBtn().click();
+
+		WhoAreYouTravellingWith who = new WhoAreYouTravellingWith(driver);							// Who are you travelling with
+		//wait.until(ExpectedConditions.elementToBeClickable(who.getWonderingSolo()));
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class=\"entry-point solo-ep\"]")));
 		Thread.sleep(3000);
-		WhoAreYouTravellingWith who = new WhoAreYouTravellingWith(driver);
 		who.getWonderingSolo().click();
+		 Thread.sleep(3000);
+		
+		AgeGroup ageGroup = new AgeGroup(driver);													// Age group details
+		//wait.until(ExpectedConditions.elementToBeClickable(ageGroup.getNextBtn()));
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"js_city_step_next\"]")));
 		Thread.sleep(3000);
-		AgeGroup ageGroup = new AgeGroup(driver);
 		ageGroup.getNextBtn().click();
 		Thread.sleep(10000);
-		EditableView editView = new EditableView(driver);
-		editView.getEditableViewLbl().click();
 		
+		EditableView editView = new EditableView(driver);											//Trip Summary page
+		editView.getEditableViewLbl().click();
 		Thread.sleep(10000);
 		driver.quit();
-		
 		
 	}
 	

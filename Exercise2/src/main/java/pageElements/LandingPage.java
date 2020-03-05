@@ -27,7 +27,7 @@ public class LandingPage {
 	
 	
 	
-	public WebElement getDepartmentLink() {
+	public WebElement getPlanYourNextVacLink() {
 		return driver.findElement(planYourNextVacationBtn);
 	}
 

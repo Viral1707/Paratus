@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.sikuli.api.Screen;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -30,6 +31,10 @@ public class testAutomation extends base{
 		Actions action = new Actions(driver);
 		action.moveToElement(ud.getCivilEngineeringLink()).build().perform();
 		Thread.sleep(10000);
+		
+		//Screen s = new Screen();
+		
+		
 		String actualTitleForOceanManagement = driver.getTitle();
 		//System.out.println(actualTitleForOceanManagement);
 		String expectedTitleForOceanManagement = "Institute For Ocean Management - Anna University offers M.Tech in Coastal Management. ENVIS Center for Coastal Zone Management and Coastal Shelterbelts";

@@ -4,6 +4,8 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -57,7 +59,7 @@ public class testAutomation extends base{
 		
 		
 		
-		Thread.sleep(20000);
+		
 		pad.getStartPlanningBtn().click();															// Click on Start Planning Button
 		
 		
@@ -105,7 +107,14 @@ public class testAutomation extends base{
 		
 		EditableView editView = new EditableView(driver);											//Trip Summary page
 		editView.getEditableViewLbl().click();
-		Thread.sleep(10000);
+		
+		Actions action = new Actions(driver);
+		
+		Thread.sleep(2000);
+		action.moveToElement(editView.getSavePlanBtn()).build().perform();
+		editView.getFinishPlanningLbl().click();
+		Thread.sleep(4000);
+		
 		driver.quit(); //Commit purpose
 		
 	}

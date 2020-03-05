@@ -12,19 +12,8 @@ public class Homepage {
 		this.driver = driver;
 	}
 	
-	//By departmentsLink = By.linkText("http://www.annauniv.edu/department/index.php");
-	//By departmentsLink = By.xpath("//a[contains(text(),'Departments')]");
 	
-	
-	
-	
-	By departmentsLink = By.cssSelector("[href='http://www.annauniv.edu/department/index.php']");
-	
-		
-		
-		
-	//By departmentsLink = By.xpath("//*[@id=\"965\"]/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td[1]/table/tbody/tr/td/table/tbody/tr/td[5]");
-	
+	By departmentsLink = By.xpath("//a[text()='Departments']");
 	
 	
 	public WebElement getDepartmentLink() {

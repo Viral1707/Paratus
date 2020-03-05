@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Assignment.Test.testAutomation">
+      <class name="Paratus2.Exercise2.testAutomation">
         <methods>
           <include name="testOne"/>
         </methods>
-      </class> <!-- Assignment.Test.testAutomation -->
+      </class> <!-- Paratus2.Exercise2.testAutomation -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

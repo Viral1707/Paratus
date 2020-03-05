@@ -98,7 +98,7 @@ public class testAutomation extends base{
 		EditableView editView = new EditableView(driver);											//Trip Summary page
 		editView.getEditableViewLbl().click();
 		Thread.sleep(10000);
-		driver.quit();
+		driver.quit(); //Commit purpose
 		
 	}
 	
